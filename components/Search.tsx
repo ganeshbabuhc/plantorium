@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 
 import API from "../service/API";
 const Search = () => {
+
+const getPlants = async () => {
+   const url = API.getURL('plants');
+    const response = await API.getData('plants');
+    const json = await response.json();
+}
   useEffect(() => {
   
-    const url = API.getURL('plants');
-    API.getData('plants').then(res => res.json()) // expecting a json response
-    .then(json => {
-      console.log('sasasas',json)
-    });
+   getPlants();
 
   },[]);
   return (
