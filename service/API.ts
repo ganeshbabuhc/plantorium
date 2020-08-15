@@ -5,7 +5,7 @@ class API {
     return `${Constants.API_HOST}${url}?token=${Constants.API_TOKEN}`;
   };
   public static getData = async (url:string): Promise<any> => {
-    return fetch(API.getURL(url), { method: 'GET'});
+    return fetch(`${Constants.API_HOST}${url}?token=${Constants.API_TOKEN}`, { method: 'GET'});
   };
 }
 
