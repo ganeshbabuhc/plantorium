@@ -21,7 +21,7 @@ class App extends Component<AppProps, AppState> {
       <div>
         <Search />
         <p>
-          Start editing to see some magic happen :)
+          Search results goes here.
         </p>
       </div>
     );

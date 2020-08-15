@@ -1,22 +1,16 @@
 import React, { useEffect } from "react";
-import API from "../service/Api";
+
+import API from "../service/API";
 const Search = () => {
   useEffect(() => {
+  
     const url = API.getURL('plants');
-     fetch(url)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          
-        }
-      )
-  },[])
+    API.getData('plants').then(res => res.json()) // expecting a json response
+    .then(json => {
+      console.log('sasasas',json)
+    });
+
+  },[]);
   return (
     <div>asghasa</div>
   )
