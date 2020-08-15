@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import API from "../service/Api";
 const Search = () => {
   useEffect(() => {
-    const url = API.getUrl('plants');
+    const url = API.getURL('plants');
      fetch(url)
       .then(res => res.json())
       .then(
