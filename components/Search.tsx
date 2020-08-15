@@ -9,7 +9,7 @@ const getPlants = () => {
 }
   useEffect(() => {
   
-   getPlants();
+  //  getPlants();
 
   },[]);
   return (
