@@ -5,7 +5,9 @@ class API {
     return `${Constants.API_HOST}${url}?token=${Constants.API_TOKEN}`;
   };
   public static getData = async (url:string): Promise<any> => {
-    return fetch(`${Constants.API_HOST}${url}?token=${Constants.API_TOKEN}`, { method: 'GET'});
+     fetch(`${Constants.API_HOST}${url}?token=${Constants.API_TOKEN}`, { method: 'GET'});
+    const response = await API.getData('plants');
+    return await response.json();
   };
 }
 
