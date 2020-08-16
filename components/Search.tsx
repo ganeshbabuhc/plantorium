@@ -1,11 +1,22 @@
 import React, { useEffect } from "react";
+import nodeFetach from "node-fetch";
 
 import API from "../service/API";
 import Constants from "../utils/Constants";
 const Search = () => {
+  const [plants, setPlants] = React.useState(async () => {
+     const apiUrl = `${Constants.API_HOST}${'plants'}?token=${Constants.API_TOKEN}`;
+      const response = await nodeFetach(apiUrl,{
+      mode: 'no-cors', // no-cors, *cors,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+  });
+  const json = await response.json();
+  return json;
+  });
 
 const getPlants = async () => {
-  console.log(fetch);
   //  const data = API.getURL('plants');
     const apiUrl = `${Constants.API_HOST}${'plants'}?token=${Constants.API_TOKEN}`;
   //    const response = await fetch(apiUrl, { method: 'GET'}).then(res => response.json()).then(res => {
@@ -17,25 +28,28 @@ const getPlants = async () => {
   //  conso
 
 
-  const response = await fetch(apiUrl, {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors,
-    headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-  });
-  response.json().then(data => {
-    console.log(data);
-  });
+  // const response = fetch(apiUrl, {
+  //   method: 'GET', // *GET, POST, PUT, DELETE, etc.
+  //   mode: 'no-cors', // no-cors, *cors,
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //     // 'Content-Type': 'application/x-www-form-urlencoded',
+  //   },
+  // });
+
+
+  // response.then(data => {
+  //   console.log(data);
+  // });
   // console.log(data)
+
     
 }
-  useEffect(() => {
+  // useEffect(() => {
   
-   getPlants();
+  //  getPlants();
 
-  },[]);
+  // },[]);
   return (
     <div>asghasa</div>
   )
