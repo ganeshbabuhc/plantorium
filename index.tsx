@@ -19,7 +19,7 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div>
-        // <Search />
+        <Search />
         <p>
           Search results goes here.
         </p>

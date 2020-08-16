@@ -5,11 +5,12 @@ const Search = () => {
 
 const getPlants = () => {
    const data = API.getURL('plants');
+  //  conso
     
 }
   useEffect(() => {
   
-  //  getPlants();
+   getPlants();
 
   },[]);
   return (
