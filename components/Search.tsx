@@ -5,6 +5,7 @@ const Search = () => {
 
 const getPlants = () => {
    const data = API.getURL('plants');
+   console.log("asasa", data);
   //  conso
     
 }
