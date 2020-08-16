@@ -1,18 +1,20 @@
 import React, { useEffect } from "react";
-import nodeFetach from "node-fetch";
 
 import API from "../service/API";
 import Constants from "../utils/Constants";
 const Search = () => {
   const [plants, setPlants] = React.useState(async () => {
      const apiUrl = `${Constants.API_HOST}${'plants'}?token=${Constants.API_TOKEN}`;
-      const response = await nodeFetach(apiUrl,{
+      const response = await fetch(apiUrl,{
       mode: 'no-cors', // no-cors, *cors,
+      
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json; charset=utf-8'
       },
   });
-  const json = await response.json();
+  const json = await response.text();
+  console.log(response);
+
   return json;
   });
 
